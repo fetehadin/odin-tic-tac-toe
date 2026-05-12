@@ -1,6 +1,6 @@
 # Odin Tic Tac Toe
 
-A browser-based Tic Tac Toe game built with HTML, CSS, and JavaScript as part of the JavaScript path from #The Odin Project.
+A browser-based Tic Tac Toe game built with HTML, CSS, and JavaScript as part of the JavaScript path from **The Odin Project**.
 
 This project focuses on practicing:
 
@@ -23,7 +23,6 @@ https://fetehadin.github.io/odin-tic-tac-toe/
 - HTML5
 - CSS3
 - Vanilla JavaScript
-
 
 ## Author
 
