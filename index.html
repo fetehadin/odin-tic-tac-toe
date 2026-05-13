@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -16,12 +17,12 @@
             </select>
             <div class="marker-round">
                 <div class="player1">
-                    <button class="marker-btn">X</button>
-                    <div class="p2roundResult">-</div>
+                    <div class="marker-div"><button class="markerBtn x"></button></div>
+                    <div class="playerScore">-</div>
                 </div>
                 <div class="player2">
-                    <button class="marker-btn">o</button>
-                    <div class="p1roundResult">-</div>
+                    <div class="marker-div"><button class="markerBtn o" ></button></div>
+                    <div class="computerScore">-</div>
                 </div>  
             </div>
             <div class="turn">
@@ -29,15 +30,15 @@
             </div>
         </div>
         <div class="playboard" id="playboard">
-            <div class="cell" data-cell>1</div>
-            <div class="cell" data-cell>1</div>
-            <div class="cell" data-cell>1</div>
-            <div class="cell" data-cell>1</div>
-            <div class="cell" data-cell>1</div>
-            <div class="cell" data-cell>1</div>
-            <div class="cell" data-cell>1</div>
-            <div class="cell" data-cell>1</div>
-            <div class="cell" data-cell>1</div>
+            <div class="cell " data-row="0" data-col="0" data-cell></div>
+            <div class="cell " data-row="0" data-col="1" data-cell></div>
+            <div class="cell " data-row="0" data-col="2" data-cell></div>
+            <div class="cell " data-row="1" data-col="0" data-cell></div>
+            <div class="cell " data-row="1" data-col="1" data-cell></div>
+            <div class="cell " data-row="1" data-col="2" data-cell></div>
+            <div class="cell " data-row="2" data-col="0" data-cell></div>
+            <div class="cell " data-row="2" data-col="1" data-cell></div>
+            <div class="cell " data-row="2" data-col="2" data-cell></div>
         </div>
         <div class="winning-message" id="winningMessage">
             <div data-winning-message-text></div>
