@@ -8,6 +8,49 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <div class="gameboard">
+        <div class="header">
+            <select class="player">
+                <option value="friend">Play aginst Friend</option>
+                <option value="computer">Play aginst Computer</option>
+            </select>
+            <div class="marker-round">
+                <div class="player1">
+                    <button class="marker-btn">X</button>
+                    <div class="p2roundResult">-</div>
+                </div>
+                <div class="player2">
+                    <button class="marker-btn">o</button>
+                    <div class="p1roundResult">-</div>
+                </div>  
+            </div>
+            <div class="turn">
+                <div>Start game or select player</div>
+            </div>
+        </div>
+        <div class="playboard">
+            <table>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr> 
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                 </tr>
+                <tr> 
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div class="restart">
+            <button>Restart game</button>
+
+        </div>
+    </div>
 </body>
 </html>
