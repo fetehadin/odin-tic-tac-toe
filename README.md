@@ -14,6 +14,18 @@ This project focuses on practicing:
 - Separation of concerns
 - State management
 
+## Features
+
+- Player vs Player mode
+- Player vs Computer mode
+- Interactive game board
+- Automatic win and draw detection
+- Round-based scoring system
+- First-to-3 winner system
+- Restart game functionality
+- SweetAlert game-over popups
+- Responsive UI
+
 ## Live Demo
 
 https://fetehadin.github.io/odin-tic-tac-toe/
@@ -23,6 +35,7 @@ https://fetehadin.github.io/odin-tic-tac-toe/
 - HTML5
 - CSS3
 - Vanilla JavaScript
+- SweetAlert
 
 ## Author
 

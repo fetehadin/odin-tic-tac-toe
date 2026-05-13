@@ -1,120 +1,3 @@
-// // 
-// // console.log(playerMarker)
-// const board = [
-//  ['', '', ''],
-//  ['', '', ''],
-//  ['', '', '']
-// ];
-// let playerMarker;
-// let computerMarker;
-// const xmarkerBtn = document.querySelector('.markerBtn.x');
-// const omarkerBtn = document.querySelector('.markerBtn.o');
-// const cells = document.querySelectorAll('.cell')
-// const turn = document.querySelector('.turn')
-
-
-// turn = player
-// function swapTurns(){
-//     if(turn==player){
-//         turn = computer
-//     }
-//     else{
-//         turn = player
-//     }
-// }
-
-// function checkWin(board, player) {
-
-//     // check rows
-//     for (let row = 0; row < 3; row++) {
-//         if (
-//             board[row][0] === player &&
-//             board[row][1] === player &&
-//             board[row][2] === player
-//         ) {
-//             return true;
-//         }
-//     }
-//     for (let col = 0; col < 3; col++) {
-//         if (
-//             board[0][col] === player &&
-//             board[1][col] === player &&
-//             board[2][col] === player
-//         ) {
-//             return true;
-//         }
-//     }
-//     if (
-//         board[0][0] === player &&
-//         board[1][1] === player &&
-//         board[2][2] === player
-//     ) {
-//         return true;
-//     }
-//     if (
-//         board[0][2] === player &&
-//         board[1][1] === player &&
-//         board[2][0] === player
-//     ) {
-//         return true;
-//     }
-//     return false;
-// }
-
-// xmarkerBtn.addEventListener('click',()=>{
-//         playerMarker = 'x';
-//         computerMarker = 'o';
-            
-//     })
-// omarkerBtn.addEventListener('click',()=>{
-//         playerMarker = 'o';
-//         computerMarker = 'x'
-            
-//     })
-
-// cells.forEach(cell =>{
-//     cell.addEventListener('click',()=>{
-//         board[row][col] = currentPlayer;
-//         cell.classList.add(playerMarker);
-// })
-// })
-
-// // the player will start the game
-
-// // change the cell value wich clicked by player to plyer marker
-// // call the check function and check if the player mark is equal to statements
-// // next move to computer to empty cells
-// // call the check function and check if the player mark is equal to statements
-// // game over when all cells are filled with either x or o
-
-// // const demoo = [[],[],[]]
-// // demoo[0][0] = zeroZero;  //id selector to the cell and change cell value on the array
-// // demoo[0][1] = zeroOne;
-// // demoo[0][2] = zeroTwo;
-// // demoo[1][0] = OneZero;
-// // demoo[1][1] = OneOne;
-// // demoo[1][2] = OneTwo;
-// // demoo[2][0] = TwoZero;
-// // demoo[2][1] = TwoOne;
-// // demoo[2][2] = TwoTwo;
-
-// // if(
-// // demoo[0][0]==demoo[0][1] && demoo[0][1]==demoo[0][2] ||
-// // demoo[1][0]==demoo[1][1] && demoo[1][1]==demoo[1][2] ||
-// // demoo[2][0]==demoo[2][1] && demoo[2][1]==demoo[2][2] ||
-// // demoo[0][0]==demoo[1][0] && demoo[1][0]==demoo[2][0] ||
-// // demoo[0][1]==demoo[1][1] && demoo[1][1]==demoo[2][1] ||
-// // demoo[0][2]==demoo[1][2] && demoo[1][2]==demoo[2][2] ||
-// // demoo[0][0]==demoo[1][1] && demoo[1][1]==demoo[2][2] ||
-// // demoo[0][2]==demoo[1][1] && demoo[1][1]==demoo[2][0]
-// // ){
-// //     winner = currentTurn;
-// // }
-// // else{
-// //     draw()
-// // }
-
-
 const board = [
     ['', '', ''],
     ['', '', ''],
@@ -134,7 +17,6 @@ const xmarkerBtn = document.querySelector('.markerBtn.x');
 const omarkerBtn = document.querySelector('.markerBtn.o');
 const computerRoundScore = document.querySelector('.computerScore');
 const playerRoundScore = document.querySelector('.playerScore')
-
 const cells = document.querySelectorAll('.cell');
 const turn = document.querySelector('.turn');
 const winningMessage = document.querySelector('[data-winning-message-text]');
@@ -174,9 +56,7 @@ function checkWin(board, player) {
     for (let row = 0; row < 3; row++) {
         if (
             board[row][0] === player && board[row][1] === player && board[row][2] === player
-        ) {
-            return true;
-        }
+        ){ return true; }
     }
     for (let col = 0; col < 3; col++) {
         if (
@@ -221,8 +101,7 @@ function computerMove() {
         }
     });
     if (emptyCells.length === 0) return;
-    const randomCell =
-        emptyCells[Math.floor(Math.random() * emptyCells.length)];
+    const randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
     const row = randomCell.dataset.row;
     const col = randomCell.dataset.col;
     board[row][col] = computerMarker;
@@ -231,15 +110,14 @@ function computerMove() {
     if (checkWin(board, computerMarker)) {
         opponentScore++;
         computerRoundScore.textContent = opponentScore;
-        swal(`${currentPlayer.toUpperCase()} Wins Round`)
+        swal(`computer Wins Round`)
         gameOver = true;
         checkFinalWinner();
         setTimeout(restartRound, 1000);
         return;
     }
-
     if (checkDraw()) {
-        winningMessage.textContent = 'Draw';
+        swal('Draw');
         gameOver = true;
         setTimeout(restartRound, 1000);
         return;
@@ -312,7 +190,7 @@ cells.forEach(cell => {
             return;
         }
         if (checkDraw()) {
-            winningMessage.textContent = 'Draw';
+            swal('Draw!!');
             gameOver = true;
             setTimeout(restartRound, 1000);
             return;
